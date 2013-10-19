@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
-  before_action :set_issue, only: [:show, :edit, :create, :update, :destroy]
+  before_action :set_issue, only: [:index, :show, :edit, :create, :update, :destroy]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @pages = @issue.pages
+  end
 
   def show
   end
