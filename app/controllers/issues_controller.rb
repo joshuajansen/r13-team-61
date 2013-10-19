@@ -6,6 +6,7 @@ class IssuesController < ApplicationController
   end
 
   def show
+    render layout: "issue"
   end
 
   def new
