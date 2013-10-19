@@ -1,0 +1,7 @@
+<h1>Editing Page</h1>
+
+<%= render 'form' %>
+
+<% content_for :sidebar do %>
+  <%= link_to fa_icon("arrow-left", text: "Back"), issue_path(@issue), class: "pure-button pure-button-primary" %>
+<% end %>
