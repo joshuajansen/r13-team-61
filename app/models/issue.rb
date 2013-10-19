@@ -1,4 +1,6 @@
 class Issue < ActiveRecord::Base
-  belongs_to :organisation
   acts_as_tenant :organisation
+
+  belongs_to :organisation
+  has_many :pages, dependent: :destroy
 end
