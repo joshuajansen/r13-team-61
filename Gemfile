@@ -32,8 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
-gem "font-awesome-rails"
+gem 'jquery-turbolinks'
+
+gem 'bourbon'
+
+gem 'neat'
+
+gem 'font-awesome-rails'
 
 gem 'acts_as_tenant'
 
