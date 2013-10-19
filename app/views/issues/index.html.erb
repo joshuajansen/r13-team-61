@@ -1,0 +1,28 @@
+<h1>My Issues</h1>
+
+<%= link_to new_issue_path, class: "btn btn-primary" do  %>
+  <%= fa_icon "plus" %> Add Issue
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        <td><%= issue.name %></td>
+        <td><%= link_to 'Show', issue %></td>
+        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
