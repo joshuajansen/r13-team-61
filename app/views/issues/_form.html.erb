@@ -1,7 +1,7 @@
-<%= form_for @issue, html: { role: "form", class: "form-horizontal" } do |f| %>
+<%= form_for @issue, html: { class: "pure-form pure-form-aligned" } do |f| %>
   <% if @issue.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this cast from being saved:</h2>
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
 
       <ul>
       <% @issue.errors.full_messages.each do |msg| %>
@@ -11,16 +11,14 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :name, class: "col-lg-2 control-label"%>
-    <div class="col-lg-10">
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
+  <div class="pure-control-group">
+    <%= f.label :name%>
+    <%= f.text_field :name %>
   </div>
 
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit "Save", class: "btn btn-primary" %>
-    </div>
+  <div class="pure-controls">
+    <%= button_tag(type: :submit, class: "pure-button pure-button-success") do %>
+      <%=  fa_icon("save", text: "Save") %>
+    <% end %>
   </div>
 <% end %>

@@ -46,6 +46,6 @@ class IssuesController < ApplicationController
 
 
     def issue_params
-      params.require(:issue).permit(:name, :screen_id)
+      params.require(:issue).permit(:name)
     end
 end

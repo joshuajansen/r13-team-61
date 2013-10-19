@@ -1,1 +1,17 @@
 <h1><%= @issue.name %></h1>
+
+Pages:
+<ul>
+  <% @issue.pages.each_with_index do |page, i| %>
+    <li>
+      <%= link_to edit_issue_page_path(@issue, page) do %>
+        <%= "##{i+1}" %>
+      <% end %>
+    </li>
+  <% end %>
+  <li><%= link_to new_issue_page_path(@issue) do %> <%= fa_icon "plus" %> add page <% end %></li>
+</ul>
+
+<% content_for :sidebar do %>
+  <%= link_to fa_icon("arrow-left", text: "Back"), issues_path, class: "pure-button pure-button-primary" %>
+<% end %>
