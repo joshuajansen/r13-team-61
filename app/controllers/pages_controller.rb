@@ -1,15 +1,18 @@
 class PagesController < ApplicationController
-  before_action :set_issue, only: [:index, :show, :edit, :create, :update, :destroy]
+  before_action :set_issue, only: [:index, :show, :edit, :create, :update, :destroy, :sort]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_pages, only: [ :edit, :index ]
 
   def index
-    @pages = @issue.pages
     render layout: 'page_editor'
   end
 
   def sort
+    params[:page].each_with_index do |page_id, index|
+      @issue.pages.update(page_id.to_i, sort_order: index)
+    end
 
+    render nothing: true
   end
 
   def show
@@ -53,7 +56,7 @@ class PagesController < ApplicationController
   private
 
     def set_pages
-      @pages = @issue.pages
+      @pages = @issue.pages.order(:sort_order)
     end
 
     def set_issue
@@ -61,7 +64,7 @@ class PagesController < ApplicationController
     end
 
     def set_page
-      @page = @issue.pages.where(id: params[:id]).first
+      @page = @issue.pages.find(params[:id])
     end
 
 
