@@ -17,7 +17,8 @@
   <article class="page">
 
     <%= form_for [ @issue, @page ], remote: true do |f| %>
-      <%= f.text_area :body, class: 'editor', resize: 'none', style: "background:url('#{image_url @page.background_image(:fitting)}') no-repeat top center" %>
+      <% page_background = ( @page.background_image.exists? ? "url('#{image_url @page.background_image(:fitting)}')" : "#fff" ) %>
+      <%= f.text_area :body, class: 'editor', resize: 'none', style: ( "background:#{page_background};" ) %>
     <% end %>
 
   </article>
