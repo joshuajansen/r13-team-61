@@ -1,0 +1,29 @@
+<%= form_for @organisation, html: { class: "organisation-form pure-form pure-form-stacked" } do |f| %>
+  <fieldset>
+    <h2>Create an organisation to get started!</h2>
+
+    <% if @organisation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@organisation.errors.count, "error") %> prohibited this organisation from being saved:</h2>
+
+        <ul>
+        <% @organisation.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.label :name, "Organisation name" %>
+    <%= f.text_field :name, placeholder: "Wired magazine", class: "pure-input-1" %>
+
+    <%= f.label :url, "Subdomain" %>
+    <div style="width:100%;">
+      <%= f.text_field :url, placeholder: "wired", class: "organisation-url pure-u-2-3" %><div class="pure-u-1-3 url-suffix">.<%= request.host %></div>
+    </div>
+  
+    <%= button_tag(type: :submit, class: 'pure-button pure-input-1 pure-button-primary') do %>
+      Get Started
+    <% end %>
+  </fieldset>
+<% end %>
