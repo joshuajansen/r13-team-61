@@ -25,11 +25,11 @@
 <div class="samples_wrapper" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; margin-top: 20px;">
 
   <section class="container examples">
-    <h1 style="width: 120px; display: inline-block;">Take <br />a look</h1>
+    <h1>Created with<br /> Flipsum</h1>
     <% Issue.limit(10).each do |issue| %>
       <%= link_to "http://#{issue.organisation.url}", class: 'article' do %>
         <div class="cover" style="background-image: url(<%= issue.preview_image_url %>)"></div>
-        <h1>test </h1>
+        <h1><%= issue.organisation.name %></h1>
       <% end %>
     <% end %>
   </section>

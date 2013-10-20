@@ -58,6 +58,10 @@ section.examples {
     vertical-align: top;
   }
 
+  > h1 {
+    width: 220px;
+  }
+
   a.article {
     text-decoration: none;
     color: #000;
@@ -68,6 +72,12 @@ section.examples {
     @include box-shadow(#aaa 0 1px 4px);
     height: 150px;
     background-size: cover;
+    opacity: .7;
+  }
+
+  a.article:hover .cover {
+    opacity: 1;
+    @include transition(all 0.1s linear);
   }
 
   a.article h1 {
