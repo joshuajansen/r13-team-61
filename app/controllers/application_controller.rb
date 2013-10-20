@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_organisation
-  before_filter :set_organisation_tenant
-  set_current_tenant_through_filter
-  
   before_filter :redirect_railsrumble
 
+  helper_method :current_organisation
+  before_filter :set_organisation_tenant
+  set_current_tenant_through_filter  
 
   def redirect_railsrumble
     redirect_to "http://flipsum.com" if request.host == "flipsum.r13.railsrumble.com"
@@ -25,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def require_organisation
     unless current_organisation
-      redirect_to root_url, notice: "Organisation is required for this action."
+      redirect_to root_url(subdomain: 'www'), notice: "Organisation is required for this action."
     end
   end
 end
