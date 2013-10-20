@@ -34,3 +34,28 @@ section.introduction {
     text-align: center;
   }
 }
+
+p.get_started {
+  text-align: center;
+  margin: 50px 0;
+  a.button.get_started {
+    font-size: 22px;
+  }
+}
+
+a.button {
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #531b93;
+  border: 1px solid #531b93;
+  @include inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  &:hover {
+    background-color: darken(#531b93, 5%);
+    border-color: darken(#531b93, 15%);
+  }
+  &:active {
+    @include box-shadow(rgba(0,0,0,0.5) 0 0 10px inset);
+  };
+}
