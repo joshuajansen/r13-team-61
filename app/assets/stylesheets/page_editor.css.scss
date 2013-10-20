@@ -73,8 +73,21 @@ body.page_editor {
       line-height: 150px;
       text-decoration: none;
       color: #aaa;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      .number{
+        background: white;
+        padding: 5px 15px;
+        opacity: 0.9;
+        border-radius: 50px;
+      }
       &:hover {
         color: #000;
+        .number{
+          opacity: 1;
+        }
       }
     }
 
@@ -95,11 +108,25 @@ body.page_editor {
     width: 768px;
     margin: auto;
     margin-top: 20px;
+    position:relative;
+    height: 100px;
 
     a.button {
       @include button(#d00);
       font-weight: bold;
       color: #fff;
+    }
+
+    form.upload-background-image{
+      right:0px;
+      top:0px;
+      width:250px;
+      position: absolute;
+      .button{
+        margin-top:10px;
+        @include button(#4FA462);
+        color: #fff;   
+      }
     }
   }
 
