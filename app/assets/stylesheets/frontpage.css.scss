@@ -27,20 +27,28 @@ header {
   h1 {
     color: #fff;
     font-size: 30px;
-    font-weight: 100;
   }
 }
 
 section.introduction {
-  margin-top: 20px;
   h1 {
-    text-align: center;
+    text-align: left;
+    margin-top: 40px;
+    width: 250px;
+    text-shadow: rgba(#fff, 0.5) 0 1px 0;
   }
 }
 
-p.get_started {
-  text-align: center;
-  margin: 50px 0;
+div.introduction_wrapper {
+  overflow: hidden;
+}
+
+div.samples_wrapper {
+
+}
+
+div.get_started {
+  width: 200px;
   button.button.get_started {
     font-size: 22px;
   }
@@ -52,14 +60,20 @@ a.button, button.button {
 
 section.examples {
   padding: 10px 0;
-  > h1, a.article {
+  header, a.article {
     @include inline-block;
-    width: 115px;
+    width: 100px;
     vertical-align: top;
   }
 
-  > h1 {
+  header {
     width: 220px;
+  }
+
+  header h1 {
+    font-size: 26px;
+    font-weight: normal;
+    color: #000;
   }
 
   a.article {
@@ -69,7 +83,7 @@ section.examples {
   }
 
   a.article .cover {
-    height: 150px;
+    height: 130px;
     background-size: cover;
     opacity: .7;
   }
@@ -84,10 +98,14 @@ section.examples {
   }
 }
 
+.introduction_background {
+  @include box-shadow(rgba(0,0,0,0.3) 0 0 10px inset);
+}
+
 .pure-form{
   border-radius: 4px;
   margin:0 auto;
-  width: 500px;
+  width: 300px;
   background: #2c4985;
   padding: 0px 20px 20px 20px;
   color: white;
