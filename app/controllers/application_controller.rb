@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
   before_filter :set_organisation_tenant
   set_current_tenant_through_filter
   
+  before_filter :redirect_railsrumble
+
+
+  def redirect_railsrumble
+    redirect_to "http://flipsum.com" if request.host == "flipsum.r13.railsrumble.com"
+  end
 
   def current_organisation
     return @current_organisation if defined?(@current_organisation)
