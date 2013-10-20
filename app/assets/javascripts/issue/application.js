@@ -2,5 +2,5 @@
 //= require jquery.pageswipe-dev
 
 $(document).ready(function() {
-  $('.pages').pageSwipe()
+  $('.magazine').pageSwipe()
 })
