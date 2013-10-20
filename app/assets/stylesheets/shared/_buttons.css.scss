@@ -23,7 +23,7 @@
     background: rgb(66, 184, 221); /* this is a light blue */
 }
 
-@mixin button($color) {
+@mixin button($color : #531b93) {
   border-radius: 5px;
   text-decoration: none;
   background-color: $color;
@@ -38,6 +38,11 @@
   &:active {
     @include box-shadow(rgba(0,0,0,0.2) 0 0 5px inset);
   };
+  &.toggled {
+    background-color: #fff;
+    color: $color;
+    border-color: $color;
+  }
 }
 
 a.button, button {

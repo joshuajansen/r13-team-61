@@ -5,7 +5,7 @@
     <%= @organisation.name %>
   </h1>
 
-  <%= link_to 'Manage issues', issues_path, class: 'button manage_issues' %>
+  <%= link_to 'Manage issues', '#', data: { behavior: 'manage_issues' }, class: 'button manage_issues' %>
 </header>
 </div>
 
@@ -15,11 +15,16 @@
     <div class="issue_row">
       <div class="issue_container">
       <% issue_row.each do |issue| %>
-        <%= link_to issue_path(issue), class: 'issue' do %>
-          <section class="cover" style="background-image: url(<%= issue.preview_image_url %>)">
+        <article class="issue">
+          <%= link_to issue_path(issue) do %>
+            <section class="cover" style="background-image: url(<%= issue.preview_image_url %>)">
+            </section>
+            <h1><%= issue.name %></h1>
+          <% end %>
+          <section class="issue_actions">
+            <%= link_to "Edit", issue_pages_path(issue), class: 'button' %>
           </section>
-          <h1><%= issue.name %></h1>
-        <% end %>
+        </article>
       <% end %>
       </div>
     </div>

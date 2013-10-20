@@ -21,7 +21,7 @@
 
 html,body{
 
-  font-family: $lucida-grande;
+  font-family: 'Helvetica Neue', sans-serif;
 
   header, nav, footer{
     @include outer-container;
