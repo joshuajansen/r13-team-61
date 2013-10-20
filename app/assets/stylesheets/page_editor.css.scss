@@ -15,6 +15,21 @@ body.page_editor {
 
   margin-left: 150px;
 
+  .saving_in_progress {
+    @include inline-block;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 3px;
+    margin-left: 10px;
+    @include transition(all 0.1s linear);
+    i {
+      margin-right: 5px;
+    }
+    &.visible {
+      opacity: 1;
+    }
+  }
+
   section.page_index {
     position: fixed;
     top: 0;

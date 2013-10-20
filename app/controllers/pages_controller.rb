@@ -32,7 +32,10 @@ class PagesController < ApplicationController
 
   def update
     if @page.update(page_params)
-      redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully updated.' }
+        format.js
+      end
     else
       render action: 'edit'
     end

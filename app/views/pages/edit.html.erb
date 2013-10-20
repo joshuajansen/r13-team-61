@@ -2,13 +2,16 @@
   <%= link_to issue_page_path(@issue, @page), method: :delete, confirm: 'Do you want to remove this page?', class: 'button' do %>
     <i class="icon-remove icon-large"></i> Remove this page
   <% end %>
+  <div id="saving" class="saving_in_progress">
+    <i class="icon-rotate-right icon-spin"></i> Saving...
+  </div>
 </section>
 
 <section class="editor_canvas">
 
   <article class="page">
 
-  <%= form_for [@issue, @page], remote: true do |f| %>
+  <%= form_for @page, url: issue_page_url(@issue, @page, format: :js), remote: true do |f| %>
     <%= f.text_area :body, class: 'editor', resize: 'none' %>
   <% end %>
 
@@ -20,6 +23,7 @@
 $(document).ready(function() {
   $('textarea#page_body').typeWatch({
     callback: function(value) {
+      $('#saving').addClass('visible');
       $(this.form).trigger('submit.rails');
     },
     captureLength: 0,
