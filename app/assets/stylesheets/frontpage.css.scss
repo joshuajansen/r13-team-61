@@ -140,6 +140,15 @@ div.get_started {
   }
 }
 
+div.shots img {
+  opacity: 0.4;
+}
+
+div.shots img:hover {
+  opacity: 1;
+  @include transition(0.1s linear all);
+}
+
 a.button, button.button {
   @include button(#531b93);
 }
