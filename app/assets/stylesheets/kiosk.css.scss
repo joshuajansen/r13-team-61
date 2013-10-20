@@ -13,6 +13,7 @@ body.kiosk {
     .cover {
       border: 1px solid #ccc;
       height: 125px;
+      background-size: cover;
     }
     @include inline-block;
     vertical-align: top;

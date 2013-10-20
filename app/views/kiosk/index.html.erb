@@ -7,7 +7,7 @@
 
   <% @issues.each do |issue| %>
     <%= link_to issue_path(issue), class: 'issue' do %>
-      <section class="cover">
+      <section class="cover" style="background-image: url(<%= issue.preview_image_url %>)">
       </section>
       <h1><%= issue.name %></h1>
     <% end %>

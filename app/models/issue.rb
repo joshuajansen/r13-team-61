@@ -3,4 +3,12 @@ class Issue < ActiveRecord::Base
 
   belongs_to :organisation
   has_many :pages, dependent: :destroy
+
+  def preview_image_url
+    page_with_background = pages.order(:sort_order).where('background_image_file_name is not null').first
+
+    if page_with_background
+      return page_with_background.background_image.url(:thumb)
+    end
+  end
 end
