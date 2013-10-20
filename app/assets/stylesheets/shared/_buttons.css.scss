@@ -22,3 +22,24 @@
 .pure-button-secondary {
     background: rgb(66, 184, 221); /* this is a light blue */
 }
+
+@mixin button($color) {
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: $color;
+  border: 1px solid $color;
+  @include inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  &:hover {
+    background-color: darken($color, 5%);
+    border-color: darken($color, 15%);
+  }
+  &:active {
+    @include box-shadow(rgba(0,0,0,0.5) 0 0 10px inset);
+  };
+}
+
+a.button {
+  @include button(#531b93);
+}

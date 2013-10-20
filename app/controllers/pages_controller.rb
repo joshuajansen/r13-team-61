@@ -40,7 +40,7 @@ class PagesController < ApplicationController
 
   def destroy
     @page.destroy
-    redirect_to pages_url
+    redirect_to issue_pages_url(@issue)
   end
 
   private
