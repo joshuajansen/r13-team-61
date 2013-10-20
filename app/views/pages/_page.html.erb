@@ -1,3 +1,4 @@
-<div class="page">
-  <%= page.body.html_safe %>
-</div>
+<article class="page">
+  <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
+  <%= markdown.render(page.body).html_safe %>
+</article>

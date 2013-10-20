@@ -43,6 +43,8 @@ gem 'font-awesome-rails'
 
 gem 'acts_as_tenant'
 
+gem 'redcarpet'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 #

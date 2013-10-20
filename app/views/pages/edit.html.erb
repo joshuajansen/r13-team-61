@@ -1,8 +1,12 @@
 <section class="editor_canvas">
 
+  <article class="page">
+
   <%= form_for [@issue, @page], remote: true do |f| %>
     <%= f.text_area :body, class: 'editor', resize: 'none' %>
   <% end %>
+
+  </article>
 
 </section>
 
