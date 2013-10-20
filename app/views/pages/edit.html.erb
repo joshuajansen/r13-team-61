@@ -5,15 +5,20 @@
   <div id="saving" class="saving_in_progress">
     <i class="icon-rotate-right icon-spin"></i> Saving...
   </div>
+  <%= form_for [ @issue, @page ], html: { multipart: true, class: "upload-background-image" }, remote: true do |f| %>
+    <%= fa_icon "camera" %> Background Image
+    <%= f.file_field :background_image %><br/>
+    <%= f.submit "Upload", class: "button", disable_with: "Uploading..." %>
+  <% end %>
 </section>
 
 <section class="editor_canvas">
 
   <article class="page">
 
-  <%= form_for @page, url: issue_page_url(@issue, @page, format: :js), remote: true do |f| %>
-    <%= f.text_area :body, class: 'editor', resize: 'none' %>
-  <% end %>
+    <%= form_for [ @issue, @page ], remote: true do |f| %>
+      <%= f.text_area :body, class: 'editor', resize: 'none', style: "background:url('#{image_url @page.background_image(:fitting)}') no-repeat top center" %>
+    <% end %>
 
   </article>
 
