@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery.pageswipe
+//= require jquery.pageswipe-dev
 
 $(document).ready(function() {
   $('.pages').pageSwipe()
