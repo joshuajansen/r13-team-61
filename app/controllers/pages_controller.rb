@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def index
     @pages = @issue.pages
+    render layout: 'page_editor'
   end
 
   def show
@@ -21,7 +22,7 @@ class PagesController < ApplicationController
     @page = @issue.pages.new(page_params)
 
     if @page.save
-      redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully created.' 
+      redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully created.'
     else
       render action: 'new'
     end
@@ -31,13 +32,13 @@ class PagesController < ApplicationController
     if @page.update(page_params)
       redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully updated.'
     else
-      render action: 'edit' 
+      render action: 'edit'
     end
   end
 
   def destroy
     @page.destroy
-    redirect_to pages_url 
+    redirect_to pages_url
   end
 
   private
@@ -45,7 +46,7 @@ class PagesController < ApplicationController
     def set_issue
       @issue = Issue.find(params[:issue_id])
     end
-    
+
     def set_page
       @page = @issue.pages.where(id: params[:id]).first
     end

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Editor</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page_editor">
+
+  <section class="page_index">
+    <% @pages.each_with_index do |page, number| %>
+      <article class="page">
+        <%= number %>
+      </article>
+    <% end %>
+  </section>
+
+</body>
+</html>
