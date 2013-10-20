@@ -4,6 +4,8 @@ class Issue < ActiveRecord::Base
   belongs_to :organisation
   has_many :pages, dependent: :destroy
 
+  scope :newest, order('created_at dESC')
+
   def preview_image_url
     page_with_background = pages.order(:sort_order).where('background_image_file_name is not null').first
 
