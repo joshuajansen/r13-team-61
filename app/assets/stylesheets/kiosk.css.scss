@@ -1,0 +1,26 @@
+// Place all the styles related to the kiosk controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body.kiosk {
+  section.issues {
+    width: 600px;
+    margin: 50px auto;
+  }
+  a {
+    text-decoration: none;
+  }
+  article.issue {
+    width: 100px;
+    .cover {
+      border: 1px solid #ccc;
+      height: 125px;
+    }
+    @include inline-block;
+    h1 {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

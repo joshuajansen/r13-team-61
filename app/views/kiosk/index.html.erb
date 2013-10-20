@@ -1,0 +1,15 @@
+<section class="issues">
+
+  <h1><%= @organisation.name %></h1>
+
+  <% @issues.each do |issue| %>
+    <%= link_to issue_path(issue) do %>
+    <article class="issue">
+      <section class="cover">
+      </section>
+      <h1><%= issue.name %></h1>
+    </article>
+    <% end %>
+  <% end %>
+
+</section>
