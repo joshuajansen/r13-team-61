@@ -1,6 +1,9 @@
 <section class="issues">
+  <%= link_to 'Manage issues', issues_path, class: 'button', style: 'float: right' %>
 
-  <h1><%= @organisation.name %></h1>
+  <h1>
+    <%= @organisation.name %>
+  </h1>
 
   <% @issues.each do |issue| %>
     <%= link_to issue_path(issue), class: 'issue' do %>

@@ -29,7 +29,7 @@ class IssuesController < ApplicationController
 
   def update
     if @issue.update(issue_params)
-      redirect_to issue_url(@issue), notice: 'Issue was successfully updated.'
+      redirect_to issue_pages_url(@issue), notice: 'Issue was successfully updated.'
     else
       render action: 'edit'
     end

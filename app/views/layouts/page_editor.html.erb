@@ -10,6 +10,13 @@
 
   <section class="page_index">
 
+    <%= link_to issues_path, class: 'nav_item' do %>
+      <i class="icon-angle-left icon-large"></i> Close editor
+    <% end %>
+    <%= link_to issue_pages_path(@issue), class: 'nav_item' do %>
+      <i class="icon-cog"></i> Settings
+    <% end %>
+
     <div style="overflow: scroll; height: 100%;">
 
       <% @pages.each_with_index do |page, number| %>
