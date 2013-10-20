@@ -24,26 +24,28 @@ body.page_editor {
     width: 150px;
 
     a.active.page {
-      background-color: #531b93;
       border: 1px solid #fff;
-      color: #fff;
+      background-color: #fff;
+      color: #531b93;
+      font-weight: bold;
+      @include box-shadow(#000 0 1px 3px);
       &:hover {
-        background: #531b93;
+        background-color: #fff;
       }
     }
 
     a.page {
       margin: 20px;
-      background-color: #fff;
+      background-color: #eee;
       height: 150px;
       text-align: center;
       font-size: 30px;
       display: block;
       line-height: 150px;
       text-decoration: none;
-      color: #000;
+      color: #aaa;
       &:hover {
-        background-color: #f0f0f0;
+        color: #000;
       }
     }
 
