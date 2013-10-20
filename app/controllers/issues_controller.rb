@@ -48,6 +48,6 @@ class IssuesController < ApplicationController
 
 
     def issue_params
-      params.require(:issue).permit(:name)
+      params.require(:issue).permit(:name, :css)
     end
 end
