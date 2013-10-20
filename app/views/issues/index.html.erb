@@ -5,18 +5,14 @@
     <tr>
       <th>Name</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @issues.each do |issue| %>
       <tr>
-        <td><%= link_to issue.name, issue_path(issue) %></td>
-        <td><%= link_to 'Pages', issue_pages_path(issue) %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-        <td><%= link_to 'Destroy', issue_path(issue), method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to issue.name, issue_pages_path(issue) %></td>
+        <td><%= link_to 'Remove', issue_path(issue), method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
