@@ -1,16 +1,28 @@
-<section class="issues">
-  <%= link_to 'Manage issues', issues_path, class: 'button', style: 'float: right' %>
+<div class="header_wrapper">
+<header>
 
   <h1>
     <%= @organisation.name %>
   </h1>
 
-  <% @issues.each do |issue| %>
-    <%= link_to issue_path(issue), class: 'issue' do %>
-      <section class="cover" style="background-image: url(<%= issue.preview_image_url %>)">
-      </section>
-      <h1><%= issue.name %></h1>
-    <% end %>
+  <%= link_to 'Manage issues', issues_path, class: 'button manage_issues' %>
+</header>
+</div>
+
+<section class="issues">
+
+  <% @issues.each_slice(4) do |issue_row| %>
+    <div class="issue_row">
+      <div class="issue_container">
+      <% issue_row.each do |issue| %>
+        <%= link_to issue_path(issue), class: 'issue' do %>
+          <section class="cover" style="background-image: url(<%= issue.preview_image_url %>)">
+          </section>
+          <h1><%= issue.name %></h1>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
   <% end %>
 
 </section>

@@ -4,18 +4,45 @@
 
 
 body.kiosk {
-  section.issues {
-    width: 600px;
-    margin: 50px auto;
+  .issue_container {
+    width: 100%;
+    margin: auto;
+    @include clearfix;
+  }
+  header {
+    padding: 0 20px;
+    h1 {
+      @include inline-block;
+    }
+    .manage_issues {
+      margin: 20px 0;
+      float: right;
+    }
+  }
+  .header_wrapper {
+    border-bottom: 1px solid #ddd;
+  }
+  .issue_row {
+    padding: 20px 0;
+  }
+  .issue_row:first-child {
+    @include linear-gradient(#fffcfb, #faf3f3)
+  }
+  .issue_row:nth-child(2) {
+    @include linear-gradient(#f6f7ff, #f4e6fd)
   }
   a.issue {
-    width: 100px;
+    width: 25%;
+    color: #000;
+    text-decoration: none;
     .cover {
-      border: 1px solid #ccc;
+      width: 100px;
       height: 125px;
       background-size: cover;
+      margin: auto;
+      background-color: #fff;
     }
-    @include inline-block;
+    float: left;
     vertical-align: top;
     h1 {
       font-size: 14px;
