@@ -50,6 +50,31 @@ a.button, button.button {
   @include button(#531b93);
 }
 
+section.examples {
+  padding: 10px 0;
+  > h1, a.article {
+    @include inline-block;
+    width: 120px;
+    vertical-align: top;
+  }
+
+  a.article {
+    text-decoration: none;
+    color: #000;
+    overflow: hidden;
+  }
+
+  a.article .cover {
+    @include box-shadow(#aaa 0 1px 4px);
+    height: 150px;
+    background-size: cover;
+  }
+
+  a.article h1 {
+    font-size: 14px;
+  }
+}
+
 .pure-form{
   border-radius: 4px;
   margin:0 auto;
