@@ -1,7 +1,19 @@
 <section class="editor_canvas">
 
-  <%= form_for [@issue, @page] do |f| %>
-    <div class="editor" contenteditable="true"></div>
+  <%= form_for [@issue, @page], remote: true do |f| %>
+    <%= f.text_area :body, class: 'editor', resize: 'none' %>
   <% end %>
 
 </section>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('textarea#page_body').typeWatch({
+    callback: function(value) {
+      $(this.form).trigger('submit.rails');
+    },
+    captureLength: 0,
+    highlight: false
+  })
+})
+</script>

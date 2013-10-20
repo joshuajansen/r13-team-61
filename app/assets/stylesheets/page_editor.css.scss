@@ -37,11 +37,12 @@ body.page_editor {
   }
 
   .editor_canvas {
-    margin: 20px;
     border: 1px solid #ccc;
     width: 768px;
+    margin: 30px auto;
     min-height: 1024px;
     position: relative;
+    @include box-shadow(#ccc 0 0 10px);
 
     .editor {
       padding: 20px;
@@ -51,6 +52,7 @@ body.page_editor {
       right: 0;
       top: 0;
       bottom: 0;
+      border: 0;
       outline: none;
     }
   }
