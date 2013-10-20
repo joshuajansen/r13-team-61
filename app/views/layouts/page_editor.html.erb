@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Page Editor</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "page_editor", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,9 +10,9 @@
 
   <section class="page_index">
     <% @pages.each_with_index do |page, number| %>
-      <article class="page">
+      <%= link_to edit_issue_page_path(@issue, page), class: 'page' do %>
         <%= number %>
-      </article>
+      <% end %>
     <% end %>
   </section>
 
