@@ -1,12 +1,17 @@
 <div class="header_wrapper">
-<header>
+  <header>
 
-  <h1>
-    <%= @organisation.name %>
-  </h1>
+    <h1>
+      <%= @organisation.name %>
+    </h1>
 
-  <%= link_to 'Manage issues', '#', data: { behavior: 'manage_issues' }, class: 'button manage_issues' %>
-</header>
+    <nav>
+      <%= link_to 'Manage issues', '#', data: { behavior: 'manage_issues' }, class: 'button' %>
+      <%= link_to issues_path, class: 'button', method: :create do %>
+        <i class="icon-plus"></i> New issue
+      <% end %>
+    </nav>
+  </header>
 </div>
 
 <section class="issues">

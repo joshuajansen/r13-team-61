@@ -18,7 +18,7 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(issue_params)
+    @issue = Issue.new
 
     if @issue.save
       redirect_to issue_pages_url(@issue), notice: 'Issue was successfully created.'
