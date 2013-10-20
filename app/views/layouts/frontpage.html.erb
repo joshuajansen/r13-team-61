@@ -40,7 +40,7 @@
     <% @latest_issues.each do |issue| %>
       <%= link_to "http://#{issue.organisation.url}", class: 'article' do %>
         <div class="cover" style="background-image: url(<%= issue.preview_image_url %>)"></div>
-        <h1><%= issue.organisation.name %></h1>
+        <h1><%= issue.name %></h1>
       <% end %>
     <% end %>
   </section>
