@@ -1,1 +1,6 @@
 $('#saving').removeClass('visible')
+
+<% if remotipart_submitted? %>
+  $('textarea.editor').css('background', 'url("<%= image_url @page.background_image(:fitting) %> no-repeat top center")')
+  $('a.page[data-page-id="<%= @page.id %>"]').css('background-image', 'url("<%= image_url @page.background_image(:thumb) %>")')
+<% end %>
