@@ -11,6 +11,7 @@
 @import "shared/flash_messages";
 
 #registration_overlay {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -22,16 +23,33 @@
 #registration {
   position: fixed;
   width: 500px;
-  height: 300px;
   left: 50%;
-  top: 50%;
-  margin-top: -150px;
+  top: 200px;
   margin-left: -250px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   h1 {
     margin: 0;
+  }
+  .field_with_errors {
+    display: inline;
+  }
+  .field_with_errors input {
+    border: 1px solid #c00;
+    outline: none;
+  }
+  span.suffix {
+    background-color: #f0f0f0;
+    border-radius: 0px 5px 5px 0;
+    border: 1px solid #ddd;
+    border-left: 0;
+    padding: 5px;
+    @include inline-block;
+    vertical-align: top;
+  }
+  .field_with_errors + span.suffix {
+    border-color: #c00;
   }
 }
 
@@ -41,20 +59,23 @@ form#new_organisation {
     border-radius: 4px;
     border: 1px solid #ccc;
     @include inline-block;
+    outline: none;
+    vertical-align: top;
   }
   input#organisation_name {
     width: 100%;
     font-size: 22px;
     padding: 8px;
   }
+  input#organisation_url {
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+    margin: 0;
+  }
   label {
     font-weight: bold;
     margin-bottom: 2px;
     display: block;
-  }
-  span.suffix {
-    line-height: 1.5;
-    @include inline-block;
   }
 }
 

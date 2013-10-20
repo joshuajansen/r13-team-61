@@ -2,7 +2,6 @@
 
   <% if @organisation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@organisation.errors.count, "error") %> prohibited this organisation from being saved:</h2>
 
       <ul>
       <% @organisation.errors.full_messages.each do |msg| %>
@@ -21,6 +20,10 @@
     <%= f.text_field :url, placeholder: "wired" %><span class="suffix">.<%= request.host %></span>
   </p>
 
-  <button>Create the magazine</button>
+  <p>
+    <button>Create the magazine</button>
+    or
+    <%= link_to "Cancel", '#', data: { behavior: "cancel_start_magazine" } %>
+  </p>
 
 <% end %>

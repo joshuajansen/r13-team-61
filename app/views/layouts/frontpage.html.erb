@@ -11,7 +11,7 @@
 <div class="header_wrapper">
   <header class="container">
     <nav>
-      <%= link_to 'Start a magazine', '#', class: 'button' %>
+      <%= link_to 'Start a magazine', '#',  data: { behavior: 'start_magazine' }, class: 'button' %>
     </nav>
     <h1>Flipsum</h1>
   </header>
@@ -22,7 +22,7 @@
   <section class="container introduction" style="height: 400px;">
     <h1>Create and publish beautiful iPad magazines</h1>
 
-    <p><%= link_to 'Start a magazine', '#', class: 'button', style: 'font-size: 20px;' %></p>
+    <p><%= link_to 'Start a magazine', '#', data: { behavior: 'start_magazine' }, class: 'button', style: 'font-size: 20px;' %></p>
 
     <div class="get_started">
       <% render "organisations/form" %>
@@ -47,7 +47,7 @@
 
 </div>
 
-<div id="registration_overlay">
+<div id="registration_overlay" style="<%= "display: block;" if @organisation.errors.any?%>">
   <div id="registration">
     <h1>Start a magazine</h1>
     <%= render "organisations/form" %>
