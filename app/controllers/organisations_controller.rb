@@ -12,7 +12,7 @@ class OrganisationsController < ApplicationController
     end
 
     if @organisation.save
-      redirect_to "#{request.protocol}#{@organisation.url}/issues", notice: 'Organisation was successfully created.' 
+      redirect_to "#{request.protocol}#{@organisation.url}/", notice: 'Organisation was successfully created.' 
     else
       render action: 'new', layout: 'frontpage'
     end
