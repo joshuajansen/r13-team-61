@@ -111,10 +111,10 @@ section.introduction {
     text-align: left;
     margin-top: 40px;
     width: 250px;
-    text-shadow: rgba(#fff, 0.5) 0 1px 0;
+    color: #fff;
+    text-shadow: rgba(#000, 0.4) 0 1px 1px;
   }
   a.button {
-    @include box-shadow(rgba(#000, 0.3) 0 1px 4px);
     &:hover {
       border-color: transparent;
     }
