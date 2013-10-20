@@ -54,7 +54,7 @@ section.examples {
   padding: 10px 0;
   > h1, a.article {
     @include inline-block;
-    width: 120px;
+    width: 115px;
     vertical-align: top;
   }
 
@@ -69,7 +69,6 @@ section.examples {
   }
 
   a.article .cover {
-    @include box-shadow(#aaa 0 1px 4px);
     height: 150px;
     background-size: cover;
     opacity: .7;
