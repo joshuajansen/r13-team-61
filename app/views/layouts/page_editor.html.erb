@@ -10,7 +10,7 @@
 
   <section class="page_index">
     <% @pages.each_with_index do |page, number| %>
-      <%= link_to edit_issue_page_path(@issue, page), class: 'page' do %>
+      <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}" do %>
         <%= number + 1 %>
       <% end %>
     <% end %>

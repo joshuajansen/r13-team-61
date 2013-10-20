@@ -23,8 +23,16 @@ body.page_editor {
     background-color: #444;
     width: 150px;
 
+    a.active.page {
+      background-color: #531b93;
+      border: 1px solid #fff;
+      color: #fff;
+      &:hover {
+        background: #531b93;
+      }
+    }
+
     a.page {
-      @include box-shadow(#000 0 1px 2px);
       margin: 20px;
       background-color: #fff;
       height: 150px;
