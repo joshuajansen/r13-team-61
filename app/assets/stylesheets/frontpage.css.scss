@@ -1,12 +1,14 @@
 /*
  *= require font-awesome
  *= require normalize-rails
+ *= require pure-min
  *= require_self
  */
 
 @import "bourbon";
 @import "neat";
 @import "shared/buttons";
+@import "shared/flash_messages";
 
 body {
   font-family: 'Helvetica Neue';
@@ -39,11 +41,50 @@ section.introduction {
 p.get_started {
   text-align: center;
   margin: 50px 0;
-  a.button.get_started {
+  button.button.get_started {
     font-size: 22px;
   }
 }
 
-a.button {
+a.button, button.button {
   @include button(#531b93);
+}
+
+.pure-form{
+  border-radius: 4px;
+  margin:0 auto;
+  width: 500px;
+  background: #2c4985;
+  padding: 0px 20px 20px 20px;
+  color: white;
+  label{
+    margin-top:20px;
+  }
+  input.organisation-url{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right:none;
+    display: inline-block;
+  }
+  div.url-suffix{
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-size: .8em;
+    border-radius: 0px 4px 4px 0px;
+    background: #ddd;
+    color:black;
+    margin: .25em 0;
+  }
+
+  button{
+    margin-top:20px;
+  }
+
+  .field_with_errors{
+    display: inline;
+    input{
+      border-color: red;
+    }
+  }
 }

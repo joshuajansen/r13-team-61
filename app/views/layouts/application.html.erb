@@ -10,6 +10,7 @@
 
     <section class="top">
       <nav>
+        <span class="organisation"><%= current_organisation.name %></span>
         <%= link_to "Issues", issues_path, class: ( "active" if ["pages", "issues"].include?(controller.controller_name) ) %>
       </nav>
     </section>

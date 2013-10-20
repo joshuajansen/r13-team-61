@@ -1,4 +1,5 @@
 class IssuesController < ApplicationController
+  before_filter :require_organisation
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   def index

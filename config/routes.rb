@@ -5,6 +5,8 @@ Flipsum::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  resources :organisations, only: [:new, :create]
+
   resources :issues do
     resources :pages
   end

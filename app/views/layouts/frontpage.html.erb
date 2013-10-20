@@ -15,10 +15,11 @@
 </div>
 
 <section class="container introduction">
+  <%= flash_messages %>
   <h1>Create and publish beautiful iPad magazines</h1>
 
   <p class="get_started">
-    <%= link_to 'Get started', issues_path, class: 'button get_started' %>
+    <%= render "organisations/form" %>
   </p>
 </section>
 
