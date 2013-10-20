@@ -13,6 +13,9 @@
     <%= link_to root_path, class: 'nav_item' do %>
       <i class="icon-angle-left icon-large"></i> Close editor
     <% end %>
+    <%= link_to issue_path(@issue), class: 'nav_item', target: "_blank" do %>
+      <%= fa_icon "external-link" %> Preview
+    <% end %>
     <%= link_to issue_pages_path(@issue), class: 'nav_item' do %>
       <i class="icon-cog"></i> Settings
     <% end %>
