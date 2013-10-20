@@ -21,7 +21,7 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
 
     if @issue.save
-      redirect_to issue_url(@issue), notice: 'Issue was successfully created.' 
+      redirect_to issue_pages_url(@issue), notice: 'Issue was successfully created.'
     else
       render action: 'new'
     end
@@ -31,13 +31,13 @@ class IssuesController < ApplicationController
     if @issue.update(issue_params)
       redirect_to issue_url(@issue), notice: 'Issue was successfully updated.'
     else
-      render action: 'edit' 
+      render action: 'edit'
     end
   end
 
   def destroy
     @issue.destroy
-    redirect_to issues_url 
+    redirect_to issues_url
   end
 
   private
