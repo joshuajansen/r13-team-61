@@ -32,7 +32,7 @@ html,body{
       a:first-child{
         margin-left:0px;
       }
-      a {
+      a, span {
         position: relative;
         display: inline-block;
         margin: 15px 25px;
@@ -47,6 +47,8 @@ html,body{
         color: #237546;
         font-weight: 700;
         text-shadow: none;
+      }
+      a{
         -webkit-transition: color 0.3s;
         -moz-transition: color 0.3s;
         transition: color 0.3s;
