@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     render layout: 'page_editor'
   end
 
+  def sort
+
+  end
+
   def show
   end
 

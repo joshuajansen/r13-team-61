@@ -19,11 +19,23 @@
 
     <div style="overflow: scroll; height: 100%;">
 
+      <div id="pages">
+
       <% @pages.each_with_index do |page, number| %>
-        <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}" do %>
+        <%= link_to edit_issue_page_path(@issue, page), id: "page-#{page.id}", class: "page #{"active" if @page == page}" do %>
           <%= number + 1 %>
         <% end %>
       <% end %>
+
+      </div>
+
+      <script type="text/javascript">
+        $('#pages').sortable({axis: "y", items: '> a', update: function() {
+          order = $('#pages').sortable('serialize');
+          console.log(order)
+          $.post('<%= sort_issue_pages_path(@issue) %>', order)
+        } });
+      </script>
 
       <%= link_to issue_pages_path(@issue), class: 'new page', method: :create do %>
         <i class="icon-plus-sign" %></i>

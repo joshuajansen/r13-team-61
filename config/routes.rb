@@ -10,6 +10,10 @@ Flipsum::Application.routes.draw do
   resources :organisations, only: [:new, :create]
 
   resources :issues do
-    resources :pages
+    resources :pages do
+      collection do
+        post :sort
+      end
+    end
   end
 end
