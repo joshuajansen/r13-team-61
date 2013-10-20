@@ -9,15 +9,20 @@
 <body class="page_editor">
 
   <section class="page_index">
-    <% @pages.each_with_index do |page, number| %>
-      <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}" do %>
-        <%= number + 1 %>
-      <% end %>
-    <% end %>
 
-    <%= link_to issue_pages_path(@issue), class: 'new page', method: :create do %>
-      <i class="icon-plus-sign" %></i>
-    <% end %>
+    <div style="overflow: scroll; height: 100%;">
+
+      <% @pages.each_with_index do |page, number| %>
+        <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}" do %>
+          <%= number + 1 %>
+        <% end %>
+      <% end %>
+
+      <%= link_to issue_pages_path(@issue), class: 'new page', method: :create do %>
+        <i class="icon-plus-sign" %></i>
+      <% end %>
+
+    </div>
   </section>
 
   <%= yield %>
