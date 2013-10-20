@@ -12,5 +12,7 @@
     <p><button class="button">Save</button></p>
   <% end %>
 
-  <%= link_to fa_icon("trash", text: "Remove this issue"), issue_path(@issue), method: :delete, data: { confirm: "Are you really sure you want to delete: #{@issue.name}?" } %>
+  <hr />
+
+  <%= link_to fa_icon("trash", text: "Remove this issue"), issue_path(@issue), method: :delete, data: { confirm: "Are you really sure you want to delete: #{@issue.name}?" }, class: 'remove button' %>
 </section>

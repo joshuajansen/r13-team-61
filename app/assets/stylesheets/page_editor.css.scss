@@ -14,6 +14,11 @@ body.page_editor {
   background-color: #f5f5f5;
   margin-left: 170px;
 
+  a.remove.button {
+    @include button(#d00);
+    font-size: 13px;
+  }
+
   section.issue_settings {
     margin-left: 20px;
   }
@@ -125,7 +130,7 @@ body.page_editor {
       .button{
         margin-top:10px;
         @include button(#4FA462);
-        color: #fff;   
+        color: #fff;
       }
     }
   }
