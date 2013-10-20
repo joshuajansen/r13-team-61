@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_organisation
   before_filter :set_organisation_tenant
   set_current_tenant_through_filter
-  
+
 
   def current_organisation
     return @current_organisation if defined?(@current_organisation)
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def require_organisation
     unless current_organisation
-      redirect_to root_url, notice: "Organisation is required for this action."
+      redirect_to root_url(subdomain: 'www'), notice: "Organisation is required for this action."
     end
   end
 end
