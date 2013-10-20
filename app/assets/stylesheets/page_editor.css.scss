@@ -37,6 +37,17 @@ body.page_editor {
         background-color: #f0f0f0;
       }
     }
+
+    a.new.page {
+      border-radius: 3px;
+      border: 1px dashed #aaa;
+      background: none;
+      @include box-shadow(none);
+      color: #aaa;
+      &:hover {
+        background-color: #555;
+      }
+    }
   }
 
   .editor_canvas {

@@ -21,10 +21,10 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = @issue.pages.new(page_params)
+    @page = @issue.pages.new
 
     if @page.save
-      redirect_to issue_page_url(@issue, @page), notice: 'Page was successfully created.'
+      redirect_to edit_issue_page_url(@issue, @page), notice: 'Page was successfully created.'
     else
       render action: 'new'
     end
