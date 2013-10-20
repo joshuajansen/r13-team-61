@@ -38,6 +38,7 @@ body.kiosk {
     color: #000;
     padding: 10px 0;
     position: relative;
+    height: 200px;
     @include inline-block;
     .issue_actions {
       display: none;

@@ -10,6 +10,10 @@
 @import "shared/buttons";
 @import "shared/flash_messages";
 
+.features {
+  margin-top: 40px;
+}
+
 #registration_overlay {
   display: none;
   position: fixed;
@@ -126,7 +130,7 @@ div.introduction_wrapper {
 }
 
 div.samples_wrapper {
-
+  border-bottom: 1px solid #ccc;
 }
 
 div.get_started {
