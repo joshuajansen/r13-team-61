@@ -8,7 +8,12 @@ class Organisation < ActiveRecord::Base
   after_create :create_example_issue
 
   def create_example_issue
-    issue = self.issues.new(name: "Example Issue")
+    issue = self.issues.new(name: "Example Issue", css: "
+      #page-1 h1{
+        color:white;
+        text-shadow: 0px 0px 5px rgba(150, 150, 150, 1);
+      }
+    ")
     
     front_img = File.open(Rails.root.join('lib', 'assets', 'example_issue', 'front.jpg'))
     front_page = Page.new(body: "# Example Magazine")
