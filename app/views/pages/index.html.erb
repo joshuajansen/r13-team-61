@@ -1,7 +1,8 @@
 <section class="issue_settings">
   <h1>Issue settings</h1>
   <%= form_for @issue do |f| %>
-    <p><%= f.text_field :name %></p>
+    <p><%= f.label :name %><br />
+      <%= f.text_field :name %></p>
     <p><button class="button">Save</button></p>
   <% end %>
 </section>

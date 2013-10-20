@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require jquery.typewatch
 //= require jquery.remotipart
+//= require jquery.ui.all
 //= require turbolinks

@@ -36,7 +36,7 @@
     border-color: darken($color, 15%);
   }
   &:active {
-    @include box-shadow(rgba(0,0,0,0.5) 0 0 10px inset);
+    @include box-shadow(rgba(0,0,0,0.2) 0 0 5px inset);
   };
 }
 
