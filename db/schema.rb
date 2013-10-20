@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20131020184657) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sort_order"
     t.string   "background_image_file_name"
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
-    t.integer  "sort_order"
   end
 
 end
