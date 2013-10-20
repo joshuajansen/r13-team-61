@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def require_organisation
     unless current_organisation
-      redirect_to root_url(subdomain: 'www'), notice: "Organisation is required for this action."
+      redirect_to root_url(subdomain: nil), notice: "Organisation is required for this action."
     end
   end
 end
