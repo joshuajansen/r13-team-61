@@ -22,5 +22,6 @@ module Flipsum
     #
 
     config.assets.precompile << "frontpage.css"
+    config.assets.precompile << "page_editor.css"
   end
 end
