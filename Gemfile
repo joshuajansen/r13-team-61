@@ -56,5 +56,7 @@ gem 'intercity', require: false
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
 
+gem 'normalize-rails'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
