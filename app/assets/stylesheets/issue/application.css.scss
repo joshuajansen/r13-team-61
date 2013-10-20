@@ -1,1 +1,13 @@
 @import "pure-min";
+
+body {
+  background-color: #000;
+}
+
+.pageswipe-viewport {
+  background-color: #fff;
+}
+
+.pageswipe-viewport .page {
+  border-right: 1px solid #000;
+}
