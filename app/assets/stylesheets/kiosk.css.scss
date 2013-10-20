@@ -8,17 +8,14 @@ body.kiosk {
     width: 600px;
     margin: 50px auto;
   }
-  a {
-    text-decoration: none;
-  }
-  article.issue {
+  a.issue {
     width: 100px;
-    vertical-align: top;
     .cover {
       border: 1px solid #ccc;
       height: 125px;
     }
     @include inline-block;
+    vertical-align: top;
     h1 {
       font-size: 14px;
       text-align: center;
