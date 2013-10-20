@@ -20,8 +20,8 @@
     <div style="overflow: scroll; height: 100%;">
 
       <% @pages.each_with_index do |page, number| %>
-        <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}" do %>
-          <%= number + 1 %>
+        <%= link_to edit_issue_page_path(@issue, page), class: "page #{"active" if @page == page}", data: { :"page-id" => page.id }, style: "background-image:url('#{page.background_image(:thumb)}')" do %>
+          <span class="number"><%= number + 1 %></span>
         <% end %>
       <% end %>
 
