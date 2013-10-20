@@ -1,4 +1,4 @@
-<article class="page" style="background-image: url(<%= page.background_image.url(:retina) %>);">
+<article class="page" style="background-image: url(<%= page.background_image.url(:fitting) %>);">
   <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
   <%= markdown.render(page.body || "").html_safe %>
 </article>
