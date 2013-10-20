@@ -1,4 +1,4 @@
 <article id="page-<%= page_counter + 1 %>" class="page" style="background-image: url(<%= page.background_image.url(:fitting) %>);">
-  <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
+  <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, lax_spacing: true) %>
   <%= markdown.render(page.body || "").html_safe %>
 </article>
