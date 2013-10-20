@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_issue, only: [:index, :show, :edit, :create, :update, :destroy]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_pages, only: [ :edit, :index ]
 
   def index
     @pages = @issue.pages
@@ -16,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def edit
+    render layout: 'page_editor'
   end
 
   def create
@@ -42,6 +44,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+    def set_pages
+      @pages = @issue.pages
+    end
 
     def set_issue
       @issue = Issue.find(params[:issue_id])

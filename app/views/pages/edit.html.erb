@@ -1,7 +1,7 @@
-<h1>Editing Page</h1>
+<section class="editor_canvas">
 
-<%= render 'form' %>
+  <%= form_for [@issue, @page] do |f| %>
+    <div class="editor" contenteditable="true"></div>
+  <% end %>
 
-<% content_for :sidebar do %>
-  <%= link_to fa_icon("arrow-left", text: "Back"), issue_path(@issue), class: "pure-button pure-button-primary" %>
-<% end %>
+</section>
