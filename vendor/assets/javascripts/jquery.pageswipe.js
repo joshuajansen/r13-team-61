@@ -44,11 +44,11 @@
     var currentPage = 1
     var touchDown = false
 
-    $(this).bind('webkitTransitionEnd', function () {
-      this.style.WebkitTransition = ''
+    $(that).bind('webkitTransitionEnd transitionend', function () {
+      that[0].style.WebkitTransition = ''
     })
 
-    $(this).bind('otransitionend', function () {
+    $(that).bind('otransitionend', function () {
       this.style.OTransition = ''
     })
 
