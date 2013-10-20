@@ -62,6 +62,6 @@ class PagesController < ApplicationController
 
 
     def page_params
-      params.require(:page).permit(:body)
+      params.require(:page).permit(:body, :background_image)
     end
 end

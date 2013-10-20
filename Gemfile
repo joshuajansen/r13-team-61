@@ -60,5 +60,9 @@ gem 'capistrano', group: :development
 
 gem 'normalize-rails'
 
+gem "paperclip", "~> 3.0"
+
+gem "remotipart", "~> 1.0"
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
