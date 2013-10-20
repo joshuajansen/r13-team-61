@@ -10,6 +10,9 @@
 
 <div class="header_wrapper">
   <header class="container">
+    <nav>
+      <%= link_to 'Start a magazine', '#', class: 'button' %>
+    </nav>
     <h1>Flipsum</h1>
   </header>
 </div>
@@ -18,6 +21,8 @@
   <div class="introduction_background" style="background-image: url(/assets/intro.png); position: absolute; top:0; left: -5px; right: -5px; bottom: 0; z-index: -1; background-repeat: no-repeat; background-position: 50% 10%; background-size: cover;"></div>
   <section class="container introduction" style="height: 400px;">
     <h1>Create and publish beautiful iPad magazines</h1>
+
+    <p><%= link_to 'Start a magazine', '#', class: 'button', style: 'font-size: 20px;' %></p>
 
     <div class="get_started">
       <% render "organisations/form" %>
@@ -40,6 +45,13 @@
     <% end %>
   </section>
 
+</div>
+
+<div id="registration_overlay">
+  <div id="registration">
+    <h1>Start a magazine</h1>
+    <%= render "organisations/form" %>
+  </div>
 </div>
 
 </body>

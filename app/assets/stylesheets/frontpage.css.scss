@@ -10,6 +10,54 @@
 @import "shared/buttons";
 @import "shared/flash_messages";
 
+#registration_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(#000, 0.7);
+}
+
+#registration {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -250px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  h1 {
+    margin: 0;
+  }
+}
+
+form#new_organisation {
+  input {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    @include inline-block;
+  }
+  input#organisation_name {
+    width: 100%;
+    font-size: 22px;
+    padding: 8px;
+  }
+  label {
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: block;
+  }
+  span.suffix {
+    line-height: 1.5;
+    @include inline-block;
+  }
+}
+
 body {
   font-family: 'Helvetica Neue';
 }
@@ -28,6 +76,13 @@ header {
     color: #fff;
     font-size: 30px;
   }
+  nav {
+    float: right;
+    margin: 20px 0;
+    a.button {
+      font-size: 12px;
+    }
+  }
 }
 
 section.introduction {
@@ -36,6 +91,12 @@ section.introduction {
     margin-top: 40px;
     width: 250px;
     text-shadow: rgba(#fff, 0.5) 0 1px 0;
+  }
+  a.button {
+    @include box-shadow(rgba(#000, 0.3) 0 1px 4px);
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 
