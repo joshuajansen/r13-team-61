@@ -1,6 +1,6 @@
 //= require jquery
-//= require jquery.pageswipe-dev
+//= require jquery.pageswipe
 
 $(document).ready(function() {
-  $('.magazine').pageSwipe()
+  $('.pages').pageSwipe()
 })

@@ -70,6 +70,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
+    modernizr-rails (2.6.2.3)
     multi_json (1.8.2)
     mysql2 (0.3.13)
     neat (1.4.0)
@@ -151,6 +152,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
+  modernizr-rails
   mysql2
   neat
   rails (= 4.0.0)

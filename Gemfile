@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'jquery-turbolinks'
+gem 'modernizr-rails'
 
 gem 'bourbon'
 
